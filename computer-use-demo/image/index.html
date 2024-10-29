@@ -29,15 +29,20 @@
     <body>
         <div class="container">
             <iframe
-                src="http://localhost:8501"
+                src=""
                 class="left"
                 allow="fullscreen"
             ></iframe>
             <iframe
-                src="http://localhost:6080/vnc.html?view_only=1&autoconnect=1&resize=scale"
+                src=""
                 class="right"
                 allow="fullscreen"
             ></iframe>
         </div>
+        <script>
+            const currentHost = window.location.hostname;
+            document.querySelector('.left').src = `http://${currentHost}:8501`;
+            document.querySelector('.right').src = `http://${currentHost}:6080/vnc.html?view_only=1&autoconnect=1&resize=scale`;
+        </script>
     </body>
 </html>
